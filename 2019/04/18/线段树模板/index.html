@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang=zh>
 <head><meta name="generator" content="Hexo 3.9.0">
     <!-- so meta -->
     <meta charset="utf-8">
@@ -12,7 +12,7 @@
 <meta property="og:url" content="http://yoursite.com/2019/04/18/线段树模板/index.html">
 <meta property="og:site_name" content="NANWOOD&#39;S BLOG">
 <meta property="og:description" content="定义线段树是一种二叉搜索树，与区间树相似，它将一个区间划分成一些单元区间，每个单元区间对应线段树中的一个叶结点。使用线段树可以快速的查找某一个节点在若干条线段中出现的次数，时间复杂度为O(logN）。而未优化的空间复杂度为2N，实际应用时一般还要开4N的数组以免越界，因此有时需要离散化让空间压缩。 线段树概述假设有编号从1到n的n个点，每个点都存了一些信息，用[L,R]表示下标从L到R的这些点。线">
-<meta property="og:locale" content="default">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-09-04T03:39:17.547Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="线段树模板">
@@ -58,19 +58,19 @@
     <span id="nav">
       <ul>
          
-          <li><a href="/">Inici</a></li>
+          <li><a href="/">首页</a></li>
          
-          <li><a href="/about/">Qui som</a></li>
+          <li><a href="/about/">关于</a></li>
          
-          <li><a href="/archives/">Articles</a></li>
+          <li><a href="/archives/">归档</a></li>
          
-          <li><a href="/projects_url">Projectes</a></li>
+          <li><a href="/projects_url">项目</a></li>
          
           <li><a href="/tags/">tags</a></li>
          
           <li><a href="/categories/">categories</a></li>
          
-          <li><a href="/search/">Buscar</a></li>
+          <li><a href="/search/">搜索</a></li>
         
       </ul>
     </span>
@@ -86,10 +86,10 @@
         <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
       </ul>
-      <span id="i-prev" class="info" style="display:none;">Post Anterior</span>
-      <span id="i-next" class="info" style="display:none;">Post Següent</span>
-      <span id="i-top" class="info" style="display:none;">Adalt</span>
-      <span id="i-share" class="info" style="display:none;">Compartir Post</span>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
     </span>
     <br/>
     <div id="share" style="display: none">
@@ -176,19 +176,19 @@
     <div id="nav-footer" style="display: none">
       <ul>
          
-          <li><a href="/">Inici</a></li>
+          <li><a href="/">首页</a></li>
          
-          <li><a href="/about/">Qui som</a></li>
+          <li><a href="/about/">关于</a></li>
          
-          <li><a href="/archives/">Articles</a></li>
+          <li><a href="/archives/">归档</a></li>
          
-          <li><a href="/projects_url">Projectes</a></li>
+          <li><a href="/projects_url">项目</a></li>
          
           <li><a href="/tags/">tags</a></li>
          
           <li><a href="/categories/">categories</a></li>
          
-          <li><a href="/search/">Buscar</a></li>
+          <li><a href="/search/">搜索</a></li>
         
       </ul>
     </div>
@@ -214,10 +214,10 @@
     </div>
 
     <div id="actions-footer">
-        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menú</a>
-        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
-        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Compartir</a>
-        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Cap amunt</a>
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
     </div>
 
   </div>
@@ -232,19 +232,19 @@
     <nav>
       <ul>
          
-          <li><a href="/">Inici</a></li>
+          <li><a href="/">首页</a></li>
          
-          <li><a href="/about/">Qui som</a></li>
+          <li><a href="/about/">关于</a></li>
          
-          <li><a href="/archives/">Articles</a></li>
+          <li><a href="/archives/">归档</a></li>
          
-          <li><a href="/projects_url">Projectes</a></li>
+          <li><a href="/projects_url">项目</a></li>
          
           <li><a href="/tags/">tags</a></li>
          
           <li><a href="/categories/">categories</a></li>
          
-          <li><a href="/search/">Buscar</a></li>
+          <li><a href="/search/">搜索</a></li>
         
       </ul>
     </nav>
@@ -265,7 +265,7 @@
   <script type="text/javascript">
   $(function() {
     // copy-btn HTML
-    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板!\">";
     btn += '<i class="far fa-clone"></i>';
     btn += '</span>'; 
     // mount it!
@@ -276,7 +276,7 @@
       }
     });
     clip.on('success', function(e) {
-      e.trigger.setAttribute('aria-label', "Copied!");
+      e.trigger.setAttribute('aria-label', "复制成功!");
       e.clearSelection();
     })
   })

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang=zh>
 <head><meta name="generator" content="Hexo 3.9.0">
     <!-- so meta -->
     <meta charset="utf-8">
@@ -12,7 +12,7 @@
 <meta property="og:url" content="http://yoursite.com/2019/04/26/SCUPC-I/index.html">
 <meta property="og:site_name" content="NANWOOD&#39;S BLOG">
 <meta property="og:description" content="SOJ 4636 Garden Aesthetics题意给定500000个点，在任意4宫格中若有3个点，那么需要增加一个点填满四宫格，求所需要增加的点的个数可以将点的x和y坐标拆分为两部建立二分图，每个存在的点为一条边，每一个联通块中所有未相连的边都是可以增加的点，所以对于每一个联通块来说，所需要增加点的个数等于其x坐标的个数*y坐标的个数-已存在的边数。 使用 并查集 来维护联通块，以及每个联通">
-<meta property="og:locale" content="default">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-09-04T03:39:20.711Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SCUPC I">
@@ -58,19 +58,19 @@
     <span id="nav">
       <ul>
          
-          <li><a href="/">Inici</a></li>
+          <li><a href="/">首页</a></li>
          
-          <li><a href="/about/">Qui som</a></li>
+          <li><a href="/about/">关于</a></li>
          
-          <li><a href="/archives/">Articles</a></li>
+          <li><a href="/archives/">归档</a></li>
          
-          <li><a href="/projects_url">Projectes</a></li>
+          <li><a href="/projects_url">项目</a></li>
          
           <li><a href="/tags/">tags</a></li>
          
           <li><a href="/categories/">categories</a></li>
          
-          <li><a href="/search/">Buscar</a></li>
+          <li><a href="/search/">搜索</a></li>
         
       </ul>
     </span>
@@ -84,10 +84,10 @@
         <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
       </ul>
-      <span id="i-prev" class="info" style="display:none;">Post Anterior</span>
-      <span id="i-next" class="info" style="display:none;">Post Següent</span>
-      <span id="i-top" class="info" style="display:none;">Adalt</span>
-      <span id="i-share" class="info" style="display:none;">Compartir Post</span>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
     </span>
     <br/>
     <div id="share" style="display: none">
@@ -165,19 +165,19 @@
     <div id="nav-footer" style="display: none">
       <ul>
          
-          <li><a href="/">Inici</a></li>
+          <li><a href="/">首页</a></li>
          
-          <li><a href="/about/">Qui som</a></li>
+          <li><a href="/about/">关于</a></li>
          
-          <li><a href="/archives/">Articles</a></li>
+          <li><a href="/archives/">归档</a></li>
          
-          <li><a href="/projects_url">Projectes</a></li>
+          <li><a href="/projects_url">项目</a></li>
          
           <li><a href="/tags/">tags</a></li>
          
           <li><a href="/categories/">categories</a></li>
          
-          <li><a href="/search/">Buscar</a></li>
+          <li><a href="/search/">搜索</a></li>
         
       </ul>
     </div>
@@ -203,10 +203,10 @@
     </div>
 
     <div id="actions-footer">
-        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menú</a>
-        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
-        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Compartir</a>
-        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Cap amunt</a>
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
     </div>
 
   </div>
@@ -221,19 +221,19 @@
     <nav>
       <ul>
          
-          <li><a href="/">Inici</a></li>
+          <li><a href="/">首页</a></li>
          
-          <li><a href="/about/">Qui som</a></li>
+          <li><a href="/about/">关于</a></li>
          
-          <li><a href="/archives/">Articles</a></li>
+          <li><a href="/archives/">归档</a></li>
          
-          <li><a href="/projects_url">Projectes</a></li>
+          <li><a href="/projects_url">项目</a></li>
          
           <li><a href="/tags/">tags</a></li>
          
           <li><a href="/categories/">categories</a></li>
          
-          <li><a href="/search/">Buscar</a></li>
+          <li><a href="/search/">搜索</a></li>
         
       </ul>
     </nav>
@@ -254,7 +254,7 @@
   <script type="text/javascript">
   $(function() {
     // copy-btn HTML
-    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板!\">";
     btn += '<i class="far fa-clone"></i>';
     btn += '</span>'; 
     // mount it!
@@ -265,7 +265,7 @@
       }
     });
     clip.on('success', function(e) {
-      e.trigger.setAttribute('aria-label', "Copied!");
+      e.trigger.setAttribute('aria-label', "复制成功!");
       e.clearSelection();
     })
   })
