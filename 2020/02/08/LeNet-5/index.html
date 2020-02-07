@@ -14,13 +14,13 @@
 <meta property="og:site_name" content="NANWOOD&#39;S BLOG">
 <meta property="og:description" content="模型介绍​    LeNet-5是由$LeCun$ 提出的一种用于识别手写数字和机器印刷字符的卷积神经网络（Convolutional Neural Network，CNN）$^{[1]}$，其命名来源于作者$LeCun$的名字，5则是其研究成果的代号，在LeNet-5之前还有LeNet-4和LeNet-1鲜为人知。LeNet-5阐述了图像中像素特征之间的相关性能够由参数共享的卷积操作所提取，同时">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://yoursite.com/2020/02/08/LeNet-5/img/LeNet/image1.png">
-<meta property="og:image" content="http://yoursite.com/2020/02/08/LeNet-5/img/LeNet/featureMap.jpg">
-<meta property="og:updated_time" content="2020-02-07T18:26:50.053Z">
+<meta property="og:image" content="http://yoursite.com/img/LeNet/image1.png">
+<meta property="og:image" content="http://yoursite.com/img/LeNet/featureMap.jpg">
+<meta property="og:updated_time" content="2020-02-07T18:33:15.035Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeNet-5">
 <meta name="twitter:description" content="模型介绍​    LeNet-5是由$LeCun$ 提出的一种用于识别手写数字和机器印刷字符的卷积神经网络（Convolutional Neural Network，CNN）$^{[1]}$，其命名来源于作者$LeCun$的名字，5则是其研究成果的代号，在LeNet-5之前还有LeNet-4和LeNet-1鲜为人知。LeNet-5阐述了图像中像素特征之间的相关性能够由参数共享的卷积操作所提取，同时">
-<meta name="twitter:image" content="http://yoursite.com/2020/02/08/LeNet-5/img/LeNet/image1.png">
+<meta name="twitter:image" content="http://yoursite.com/img/LeNet/image1.png">
     
     
         
@@ -157,10 +157,10 @@
 
   <div class="content" itemprop="articleBody">
     <h3 id="模型介绍"><a href="#模型介绍" class="headerlink" title="模型介绍"></a>模型介绍</h3><p>​    LeNet-5是由$LeCun$ 提出的一种用于识别手写数字和机器印刷字符的卷积神经网络（Convolutional Neural Network，CNN）$^{[1]}$，其命名来源于作者$LeCun$的名字，5则是其研究成果的代号，在LeNet-5之前还有LeNet-4和LeNet-1鲜为人知。LeNet-5阐述了图像中像素特征之间的相关性能够由参数共享的卷积操作所提取，同时使用卷积、下采样（池化）和非线性映射这样的组合结构，是当前流行的大多数深度图像识别网络的基础。</p>
-<h3 id="模型结构"><a href="#模型结构" class="headerlink" title="模型结构"></a>模型结构</h3><p><img src="./img/LeNet/image1.png" alt></p>
-<p>​                                                                 图4.1 LeNet-5网络结构图</p>
+<h3 id="模型结构"><a href="#模型结构" class="headerlink" title="模型结构"></a>模型结构</h3><p><img src="/img/LeNet/image1.png" alt></p>
+<p>​                                                                 图1 LeNet-5网络结构图</p>
 <p>​    如图4.1所示，LeNet-5一共包含7层（输入层不作为网络结构），分别由2个卷积层、2个下采样层和3个连接层组成，网络的参数配置如表4.1所示，其中下采样层和全连接层的核尺寸分别代表采样范围和连接矩阵的尺寸（如卷积核尺寸中的$“5\times5\times1/1,6”$表示核大小为$5\times5\times1$、步长为$1​$且核个数为6的卷积核）。</p>
-<p>​                                                                 表4.1 LeNet-5网络参数配置</p>
+<p>​                                                                 表1 LeNet-5网络参数配置</p>
 <div class="table-container">
 <table>
 <thead>
@@ -229,8 +229,8 @@
 <p>​    $^*$ 在LeNet中，下采样操作和池化操作类似，但是在得到采样结果后会乘以一个系数和加上一个偏置项，所以下采样的参数个数是$(1+1)\times6​$而不是零。</p>
 <p>​    $^*$ $C_3$卷积层可训练参数并未直接连接$S_2$中所有的特征图（Feature Map），而是采用如图4.2所示的采样特征方式进行连接（稀疏连接），生成的16个通道特征图中分别按照相邻3个特征图、相邻4个特征图、非相邻4个特征图和全部6个特征图进行映射，得到的参数个数计算公式为$6\times(25\times3+1)+6\times(25\times4+1)+3\times(25\times4+1)+1\times(25\times6+1)=1516$，在原论文中解释了使用这种采样方式原因包含两点：限制了连接数不至于过大（当年的计算能力比较弱）;强制限定不同特征图的组合可以使映射得到的特征图学习到不同的特征模式。</p>
 </blockquote>
-<p><img src="./img/LeNet/featureMap.jpg" alt="FeatureMap"></p>
-<p>​                                                                图4.2 $S_2$与$C_3$之间的特征图稀疏连接</p>
+<p><img src="/img/LeNet/featureMap.jpg" alt="FeatureMap"></p>
+<p>​                                                                图2 $S_2$与$C_3$之间的特征图稀疏连接</p>
 <blockquote>
 <p>​    $^*$ $C_5$卷积层在图4.1中显示为全连接层，原论文中解释这里实际采用的是卷积操作，只是刚好在$5\times5$卷积后尺寸被压缩为$1\times1​$，输出结果看起来和全连接很相似。</p>
 </blockquote>
