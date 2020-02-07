@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>LeNet-5</title>
+      <link href="/2020/02/08/LeNet-5/"/>
+      <url>/2020/02/08/LeNet-5/</url>
+      
+        <content type="html"><![CDATA[<h3 id="模型介绍"><a href="#模型介绍" class="headerlink" title="模型介绍"></a>模型介绍</h3><p>​    LeNet-5是由$LeCun$ 提出的一种用于识别手写数字和机器印刷字符的卷积神经网络（Convolutional Neural Network，CNN）$^{[1]}$，其命名来源于作者$LeCun$的名字，5则是其研究成果的代号，在LeNet-5之前还有LeNet-4和LeNet-1鲜为人知。LeNet-5阐述了图像中像素特征之间的相关性能够由参数共享的卷积操作所提取，同时使用卷积、下采样（池化）和非线性映射这样的组合结构，是当前流行的大多数深度图像识别网络的基础。</p><h3 id="模型结构"><a href="#模型结构" class="headerlink" title="模型结构"></a>模型结构</h3><p><img src="./img/LeNet/image1.png" alt></p><p>​                                                                 图4.1 LeNet-5网络结构图</p><p>​    如图4.1所示，LeNet-5一共包含7层（输入层不作为网络结构），分别由2个卷积层、2个下采样层和3个连接层组成，网络的参数配置如表4.1所示，其中下采样层和全连接层的核尺寸分别代表采样范围和连接矩阵的尺寸（如卷积核尺寸中的$“5\times5\times1/1,6”$表示核大小为$5\times5\times1$、步长为$1​$且核个数为6的卷积核）。</p><p>​                                                                 表4.1 LeNet-5网络参数配置</p><div class="table-container"><table><thead><tr><th style="text-align:center">网络层</th><th style="text-align:center">输入尺寸</th><th style="text-align:center">核尺寸</th><th style="text-align:center">输出尺寸</th><th style="text-align:center">可训练参数量</th></tr></thead><tbody><tr><td style="text-align:center">卷积层$C_1$</td><td style="text-align:center">$32\times32\times1$</td><td style="text-align:center">$5\times5\times1/1,6$</td><td style="text-align:center">$28\times28\times6$</td><td style="text-align:center">$(5\times5\times1+1)\times6$</td></tr><tr><td style="text-align:center">下采样层$S_2$</td><td style="text-align:center">$28\times28\times6$</td><td style="text-align:center">$2\times2/2$</td><td style="text-align:center">$14\times14\times6$</td><td style="text-align:center">$(1+1)\times6$ $^*$</td></tr><tr><td style="text-align:center">卷积层$C_3$</td><td style="text-align:center">$14\times14\times6$</td><td style="text-align:center">$5\times5\times6/1,16$</td><td style="text-align:center">$10\times10\times16$</td><td style="text-align:center">$1516^*$</td></tr><tr><td style="text-align:center">下采样层$S_4$</td><td style="text-align:center">$10\times10\times16$</td><td style="text-align:center">$2\times2/2$</td><td style="text-align:center">$5\times5\times16$</td><td style="text-align:center">$(1+1)\times16$</td></tr><tr><td style="text-align:center">卷积层$C_5$$^*$</td><td style="text-align:center">$5\times5\times16$</td><td style="text-align:center">$5\times5\times16/1,120$</td><td style="text-align:center">$1\times1\times120$</td><td style="text-align:center">$(5\times5\times16+1)\times120$</td></tr><tr><td style="text-align:center">全连接层$F_6$</td><td style="text-align:center">$1\times1\times120$</td><td style="text-align:center">$120\times84$</td><td style="text-align:center">$1\times1\times84$</td><td style="text-align:center">$(120+1)\times84$</td></tr><tr><td style="text-align:center">输出层</td><td style="text-align:center">$1\times1\times84$</td><td style="text-align:center">$84\times10$</td><td style="text-align:center">$1\times1\times10$</td><td style="text-align:center">$(84+1)\times10$</td></tr></tbody></table></div><blockquote><p>​    $^*$ 在LeNet中，下采样操作和池化操作类似，但是在得到采样结果后会乘以一个系数和加上一个偏置项，所以下采样的参数个数是$(1+1)\times6​$而不是零。</p><p>​    $^*$ $C_3$卷积层可训练参数并未直接连接$S_2$中所有的特征图（Feature Map），而是采用如图4.2所示的采样特征方式进行连接（稀疏连接），生成的16个通道特征图中分别按照相邻3个特征图、相邻4个特征图、非相邻4个特征图和全部6个特征图进行映射，得到的参数个数计算公式为$6\times(25\times3+1)+6\times(25\times4+1)+3\times(25\times4+1)+1\times(25\times6+1)=1516$，在原论文中解释了使用这种采样方式原因包含两点：限制了连接数不至于过大（当年的计算能力比较弱）;强制限定不同特征图的组合可以使映射得到的特征图学习到不同的特征模式。</p></blockquote><p><img src="./img/LeNet/featureMap.jpg" alt="FeatureMap"></p><p>​                                                                图4.2 $S_2$与$C_3$之间的特征图稀疏连接</p><blockquote><p>​    $^*$ $C_5$卷积层在图4.1中显示为全连接层，原论文中解释这里实际采用的是卷积操作，只是刚好在$5\times5$卷积后尺寸被压缩为$1\times1​$，输出结果看起来和全连接很相似。</p></blockquote><h3 id="模型特性"><a href="#模型特性" class="headerlink" title="模型特性"></a>模型特性</h3><ul><li>卷积网络使用一个3层的序列组合：卷积、下采样（池化）、非线性映射（LeNet-5最重要的特性，奠定了目前深层卷积网络的基础）</li><li>使用卷积提取空间特征</li><li>使用映射的空间均值进行下采样</li><li>使用$tanh$或$sigmoid$进行非线性映射</li><li>多层神经网络（MLP）作为最终的分类器</li><li>层间的稀疏连接矩阵以避免巨大的计算开销</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 深度学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 经典网络 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>SCUPC I</title>
       <link href="/2019/04/26/SCUPC-I/"/>
       <url>/2019/04/26/SCUPC-I/</url>
@@ -43,8 +68,8 @@
     
     <entry>
       <title>支持向量机</title>
-      <link href="/2019/04/19/%E2%95%93%D0%B7%E2%94%82%E2%95%93%E2%95%A7%D0%84%E2%94%B4%E2%94%90%E2%95%97%C2%B7/"/>
-      <url>/2019/04/19/%E2%95%93%D0%B7%E2%94%82%E2%95%93%E2%95%A7%D0%84%E2%94%B4%E2%94%90%E2%95%97%C2%B7/</url>
+      <link href="/2019/04/19/%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/"/>
+      <url>/2019/04/19/%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/</url>
       
         <content type="html"><![CDATA[<h3 id="SVM简介"><a href="#SVM简介" class="headerlink" title="SVM简介"></a>SVM简介</h3><p>支持向量机(Support Vector Machine)是Cortes和Vapnik于1995年首先提出的，它在解决小样本、非线性及高维模式识别中表现出许多特有的优势，并能够推广应用到函数拟合等其他机器学习问题中。<br>支持向量机方法是建立在统计学习理论的VC 维理论和结构风险最小原理基础上的，根据有限的样本信息在模型的复杂性（即对特定训练样本的学习精度，Accuracy）和学习能力（即无错误地识别任意样本的能力）之间寻求最佳折衷，以期获得最好的推广能力。<br><br></p><h3 id="线性分类"><a href="#线性分类" class="headerlink" title="线性分类"></a>线性分类</h3><p>给定训练样本集 $ D=((x_1,y_1),(x_2,y_2),…,(x_m,y_m)),y_i\in\{-1,1\} $，线性分类器基于训练样本集D找到一个超平面 $ f(x)=W^Tx+b$ 区分两类数据。<br>当$ f(x)&gt;0 $时表示$ y=1 $的点，$ f(x)<0 $时表示$ y="-1" $的点，当$ f(x)="0" $时，表示该点在超平面上。当超平面距离两边的数据间距越大，则表示该超平面抗干扰性越好 <br></0></p><h3 id="支持向量"><a href="#支持向量" class="headerlink" title="支持向量"></a>支持向量</h3><p><br></p><script type="math/tex; mode=display">{w^Tx_i+b\geq1,y_i=1\atop w^Tx_i+b\leq-1,y_i=-1}</script><p><em>支持向量</em> 就是使得上式等号成立的，最靠近两条虚边界线的向量。<br>我们可以通过计算得到每一样本点$x$到超平面的距离为 $ r=\frac{|w^Tx+b|}{||w||} $<br>支持向量满足上述等式，由$w^Tx_0+b=0$($x_0$为垂点)可得 $ r=\frac{|w^Tx+b|}{||w||} $<br>推出 $ r=\frac{2}{||w||} $<br>得SVM的基本型</p><script type="math/tex; mode=display">max\frac{2}{||w||}\atop{s.t.y_i(w^Tx_i+b)\geq1,i=1,2,...,m}</script><p>等价于</p><script type="math/tex; mode=display">min\frac{1}{2}||w||^2\atop{s.t.y_i(w^Tx_i+b\geq,i=1,2,...m)}</script><p>使用拉格朗日乘数法求解</p>]]></content>
       
