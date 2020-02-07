@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="NANWOOD&#39;S BLOG">
 <meta property="og:description" content="SOJ 4616 CaCO3 Tree题意给定一棵n个结点的树和m条虚线边，求没有虚线连接到自身之外结点的子树个数对于每一对虚线边的结点，结点到其LCA的每个点（除了LCA本身）为根结点的子树一定不符合要求统计未被标记的点的个数即是所求的子树个数使用树上差分，由于LCA本身不标记，所以类似于对于边的差分，将差分数组的LCA结点-2，虚线边结点+1，从根结点dfs维护子树和，即可完成标记ps:貌似">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-04T03:39:21.931Z">
+<meta property="og:updated_time" content="2019-09-04T03:39:22.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SCUPC B+D">
 <meta name="twitter:description" content="SOJ 4616 CaCO3 Tree题意给定一棵n个结点的树和m条虚线边，求没有虚线连接到自身之外结点的子树个数对于每一对虚线边的结点，结点到其LCA的每个点（除了LCA本身）为根结点的子树一定不符合要求统计未被标记的点的个数即是所求的子树个数使用树上差分，由于LCA本身不标记，所以类似于对于边的差分，将差分数组的LCA结点-2，虚线边结点+1，从根结点dfs维护子树和，即可完成标记ps:貌似">
@@ -48,7 +48,8 @@
     
 </head>
 
-<body class="max-width mx-auto px3 ltr">    
+<body class="max-width mx-auto px3 ltr">
+    
       <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="header-post">
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
@@ -78,7 +79,7 @@
         <li><a class="icon" href="/2019/04/26/SCUPC-I/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
-        <li><a class="icon" href="/2019/04/19/支持向量机/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        <li><a class="icon" href="/2019/04/19/╓з│╓╧Є┴┐╗·/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
         <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
@@ -215,7 +216,7 @@
         
         <footer id="footer">
   <div class="footer-left">
-    Copyright &copy; 2019 NANWOOD
+    Copyright &copy; 2020 NANWOOD
   </div>
   <div class="footer-right">
     <nav>
@@ -276,25 +277,8 @@
 
 <!-- Baidu Analytics -->
 
-<!-- Disqus Comments -->
+<!-- Disqus Comments --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>
