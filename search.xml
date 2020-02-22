@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>不定积分与定积分</title>
+      <link href="/2020/02/22/%E4%B8%8D%E5%AE%9A%E7%A7%AF%E5%88%86%E4%B8%8E%E5%AE%9A%E7%A7%AF%E5%88%86/"/>
+      <url>/2020/02/22/%E4%B8%8D%E5%AE%9A%E7%A7%AF%E5%88%86%E4%B8%8E%E5%AE%9A%E7%A7%AF%E5%88%86/</url>
+      
+        <content type="html"><![CDATA[<h3 id="黎曼和与定积分"><a href="#黎曼和与定积分" class="headerlink" title="黎曼和与定积分"></a>黎曼和与定积分</h3><p><strong>概念</strong>：设函数$f(x)$在闭区间$[a, b]$上有定义，在该闭区间上插入一系列分点：</p><script type="math/tex; mode=display">a = x_0 < ... < x_{i-1} < x_i < ... < x_n = b</script><p>将至划分为$n$个小区间，并在每一个小区间$[x_{i-1}, x_i]$上任意取一个点$\xi_i \in [x_{i-1}, x_i]$，作和式（即<strong>黎曼和</strong>或<strong>积分</strong>）</p><script type="math/tex; mode=display">\sum\limits_{i=1}^nf(x_i)\Delta x_i</script><p>这里$\Delta x_i = x_i - x_{i - 1}$是第$i$个小区间的长度。如果存在一个数$P$，满足：对于任意小的正实数$\varepsilon &gt; 0$，都存在另一个正实数$\varphi &gt; 0$，使得所有划分中，只要他的最大小区间的长度小于$\varphi$，那么无论怎么选取各个小区间上的$\xi_i$的值，都有：</p><script type="math/tex; mode=display">|\sum\limits_{i=1}^nf(\xi_i) \Delta x_i - P|</script><p>那么就称函数$f(x)$在闭区间$[a, b]$上<strong>可积</strong>，$P$称为函数$f(x)$在闭区间$[a, b]$上的定积分值，符号表示：</p><script type="math/tex; mode=display">P = \int_{a}^{b} f(x)\, dx</script><p>其中的$a, b$称为积分上限和积分下限</p><h3 id="可积条件"><a href="#可积条件" class="headerlink" title="可积条件"></a>可积条件</h3><p><strong>达布和</strong>：设函数$f(x)$在闭区间$[a, b]$上有定义，对于该闭区间的某个划分：</p><script type="math/tex; mode=display">a = x_0 < ... < x_{i-1} < x_i < ... < x_n = b</script><p>设$f(x)$在每个小区间$[x_{i-1}, x_i]$上的上确界为$M_i$，下确界为$m_i$，作和式：</p><script type="math/tex; mode=display">s = \sum\limits_{i=1}^nm_i\Delta x_i</script><p>称为<strong>下积分和</strong>，再作和式</p><script type="math/tex; mode=display">S = \sum\limits_{i=1}^n M_i\Delta x_i</script><p>称为<strong>上积分和</strong>，上积分和与下积分和都成为<strong>达布和</strong><br>在每个小区间$[x_{i-1}, x_i]$上任意取定点$\xi_i$，有</p><script type="math/tex; mode=display">m_i \le f(\xi_i) \le M_i</script><p>因此有</p><script type="math/tex; mode=display">\sum\limits_{i=1}^nm_i\Delta x_i \le \sum\limits_{i=1}^nf(\xi_i)\Delta x_i \le \sum\limits_{i=1}^nM_i\Delta x_i</script><p><strong>性质1</strong>：如果在分划中增加一些新的分点，那么上积分和不会增加，下积分和不会减小<br><strong>性质2</strong>：上积分和永远不小于下积分和，无论是对于同一个划分还是不同的划分均是如此<br><strong>可积条件1</strong>：函数$f(x)$在闭区间上可积的充分必要条件是：</p><script type="math/tex; mode=display">\lim\limits_{\lambda \to 0}(S - s) = 0</script><p>$\lambda$表示划分下的各小区间的最大长度<br><strong>可积条件2</strong>：函数$f(x)$在闭区间上可积的充分必要条件是：</p><script type="math/tex; mode=display">\lim\limits_{\lambda \to 0} \omega_i\Delta x_i = 0</script><p>$\lambda$表示划分下的各小区间的最大长度，$\omega_i = M_i - m_i$(小区间上下确界的振幅)<br><strong>上积分与下积分</strong>：上积分和的下确界称为<strong>上积分</strong>，记作$ I^* $，下积分和的上确界称为<strong>下积分</strong>，记作$ I_* $<br>上积分是上积分和的极限，下积分是下积分和的极限，即：</p><script type="math/tex; mode=display">I^* = \lim\limits_{\lambda \to 0}S, I_* = \lim\limits_{\lambda \to 0}s</script><p>$\lambda$表示划分下的各小区间的最大长度<br><strong>可积条件3</strong>：函数在闭区间上可积的充分必要条件是：上积分与下积分相等，即：</p><script type="math/tex; mode=display">I^* = I_*</script><p>并且在上下积分相等的情况下，这个值就是定积分的值</p><h3 id="可积函数与不可积函数"><a href="#可积函数与不可积函数" class="headerlink" title="可积函数与不可积函数"></a>可积函数与不可积函数</h3><p><strong>定理1</strong>：闭区间上的连续函数总是可积的<br><strong>定理2</strong>：如果函数在闭区间上只有有限多个间断点，那么它是可积的<br><strong>定理3</strong>：函数$f(x)$在闭区间上可积的充分必要条件是：对于任意小的两个正实数$\varepsilon &gt; 0, \sigma &gt; 0$，都存在一个很小的正实数$\varphi&gt;0$，使得任何一个最大小区间长度小于$\varphi$的划分都满足：振幅大于$\varepsilon$的小区间长度总和不超过$\sigma$<br><strong>定理4</strong>：如果函数在闭区间上单调有界，则它是可积的</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数学 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>导数与微分</title>
       <link href="/2020/02/13/%E5%AF%BC%E6%95%B0%E4%B8%8E%E5%BE%AE%E5%88%86/"/>
       <url>/2020/02/13/%E5%AF%BC%E6%95%B0%E4%B8%8E%E5%BE%AE%E5%88%86/</url>
