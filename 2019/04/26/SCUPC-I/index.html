@@ -9,7 +9,7 @@
     <meta name="description" content="SOJ 4636 Garden Aesthetics题意给定500000个点，在任意4宫格中若有3个点，那么需要增加一个点填满四宫格，求所需要增加的点的个数可以将点的x和y坐标拆分为两部建立二分图，每个存在的点为一条边，每一个联通块中所有未相连的边都是可以增加的点，所以对于每一个联通块来说，所需要增加点的个数等于其x坐标的个数*y坐标的个数-已存在的边数。 使用 并查集 来维护联通块，以及每个联通">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SCUPC I">
-<meta property="og:url" content="http://yoursite.com/2019/04/26/SCUPC-I/index.html">
+<meta property="og:url" content="http://zn0419.cn/2019/04/26/SCUPC-I/index.html">
 <meta property="og:site_name" content="NANWOOD&#39;S BLOG">
 <meta property="og:description" content="SOJ 4636 Garden Aesthetics题意给定500000个点，在任意4宫格中若有3个点，那么需要增加一个点填满四宫格，求所需要增加的点的个数可以将点的x和y坐标拆分为两部建立二分图，每个存在的点为一条边，每一个联通块中所有未相连的边都是可以增加的点，所以对于每一个联通块来说，所需要增加点的个数等于其x坐标的个数*y坐标的个数-已存在的边数。 使用 并查集 来维护联通块，以及每个联通">
 <meta property="og:locale" content="en">
@@ -92,16 +92,16 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/04/26/SCUPC-I/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/04/26/SCUPC-I/&text=SCUPC I"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/04/26/SCUPC-I/&title=SCUPC I"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/04/26/SCUPC-I/&is_video=false&description=SCUPC I"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=SCUPC I&body=Check out this article: http://yoursite.com/2019/04/26/SCUPC-I/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/04/26/SCUPC-I/&title=SCUPC I"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/04/26/SCUPC-I/&title=SCUPC I"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/04/26/SCUPC-I/&title=SCUPC I"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/04/26/SCUPC-I/&title=SCUPC I"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/04/26/SCUPC-I/&name=SCUPC I&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://zn0419.cn/2019/04/26/SCUPC-I/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://zn0419.cn/2019/04/26/SCUPC-I/&text=SCUPC I"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://zn0419.cn/2019/04/26/SCUPC-I/&title=SCUPC I"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://zn0419.cn/2019/04/26/SCUPC-I/&is_video=false&description=SCUPC I"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=SCUPC I&body=Check out this article: http://zn0419.cn/2019/04/26/SCUPC-I/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://zn0419.cn/2019/04/26/SCUPC-I/&title=SCUPC I"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://zn0419.cn/2019/04/26/SCUPC-I/&title=SCUPC I"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://zn0419.cn/2019/04/26/SCUPC-I/&title=SCUPC I"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://zn0419.cn/2019/04/26/SCUPC-I/&title=SCUPC I"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://zn0419.cn/2019/04/26/SCUPC-I/&name=SCUPC I&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -186,16 +186,16 @@
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/04/26/SCUPC-I/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/04/26/SCUPC-I/&text=SCUPC I"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/04/26/SCUPC-I/&title=SCUPC I"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/04/26/SCUPC-I/&is_video=false&description=SCUPC I"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=SCUPC I&body=Check out this article: http://yoursite.com/2019/04/26/SCUPC-I/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/04/26/SCUPC-I/&title=SCUPC I"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/04/26/SCUPC-I/&title=SCUPC I"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/04/26/SCUPC-I/&title=SCUPC I"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/04/26/SCUPC-I/&title=SCUPC I"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/04/26/SCUPC-I/&name=SCUPC I&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://zn0419.cn/2019/04/26/SCUPC-I/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://zn0419.cn/2019/04/26/SCUPC-I/&text=SCUPC I"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://zn0419.cn/2019/04/26/SCUPC-I/&title=SCUPC I"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://zn0419.cn/2019/04/26/SCUPC-I/&is_video=false&description=SCUPC I"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=SCUPC I&body=Check out this article: http://zn0419.cn/2019/04/26/SCUPC-I/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://zn0419.cn/2019/04/26/SCUPC-I/&title=SCUPC I"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://zn0419.cn/2019/04/26/SCUPC-I/&title=SCUPC I"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://zn0419.cn/2019/04/26/SCUPC-I/&title=SCUPC I"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://zn0419.cn/2019/04/26/SCUPC-I/&title=SCUPC I"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://zn0419.cn/2019/04/26/SCUPC-I/&name=SCUPC I&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>

@@ -9,7 +9,7 @@
     <meta name="description" content="SOJ 4616 CaCO3 Tree题意给定一棵n个结点的树和m条虚线边，求没有虚线连接到自身之外结点的子树个数对于每一对虚线边的结点，结点到其LCA的每个点（除了LCA本身）为根结点的子树一定不符合要求统计未被标记的点的个数即是所求的子树个数使用树上差分，由于LCA本身不标记，所以类似于对于边的差分，将差分数组的LCA结点-2，虚线边结点+1，从根结点dfs维护子树和，即可完成标记ps:貌似">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SCUPC B+D">
-<meta property="og:url" content="http://yoursite.com/2019/04/23/SCUPC-B-D/index.html">
+<meta property="og:url" content="http://zn0419.cn/2019/04/23/SCUPC-B-D/index.html">
 <meta property="og:site_name" content="NANWOOD&#39;S BLOG">
 <meta property="og:description" content="SOJ 4616 CaCO3 Tree题意给定一棵n个结点的树和m条虚线边，求没有虚线连接到自身之外结点的子树个数对于每一对虚线边的结点，结点到其LCA的每个点（除了LCA本身）为根结点的子树一定不符合要求统计未被标记的点的个数即是所求的子树个数使用树上差分，由于LCA本身不标记，所以类似于对于边的差分，将差分数组的LCA结点-2，虚线边结点+1，从根结点dfs维护子树和，即可完成标记ps:貌似">
 <meta property="og:locale" content="en">
@@ -92,16 +92,16 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/04/23/SCUPC-B-D/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/04/23/SCUPC-B-D/&text=SCUPC B+D"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/04/23/SCUPC-B-D/&title=SCUPC B+D"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/04/23/SCUPC-B-D/&is_video=false&description=SCUPC B+D"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=SCUPC B+D&body=Check out this article: http://yoursite.com/2019/04/23/SCUPC-B-D/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/04/23/SCUPC-B-D/&title=SCUPC B+D"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/04/23/SCUPC-B-D/&title=SCUPC B+D"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/04/23/SCUPC-B-D/&title=SCUPC B+D"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/04/23/SCUPC-B-D/&title=SCUPC B+D"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/04/23/SCUPC-B-D/&name=SCUPC B+D&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://zn0419.cn/2019/04/23/SCUPC-B-D/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://zn0419.cn/2019/04/23/SCUPC-B-D/&text=SCUPC B+D"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://zn0419.cn/2019/04/23/SCUPC-B-D/&title=SCUPC B+D"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://zn0419.cn/2019/04/23/SCUPC-B-D/&is_video=false&description=SCUPC B+D"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=SCUPC B+D&body=Check out this article: http://zn0419.cn/2019/04/23/SCUPC-B-D/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://zn0419.cn/2019/04/23/SCUPC-B-D/&title=SCUPC B+D"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://zn0419.cn/2019/04/23/SCUPC-B-D/&title=SCUPC B+D"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://zn0419.cn/2019/04/23/SCUPC-B-D/&title=SCUPC B+D"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://zn0419.cn/2019/04/23/SCUPC-B-D/&title=SCUPC B+D"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://zn0419.cn/2019/04/23/SCUPC-B-D/&name=SCUPC B+D&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -189,16 +189,16 @@
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/04/23/SCUPC-B-D/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/04/23/SCUPC-B-D/&text=SCUPC B+D"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/04/23/SCUPC-B-D/&title=SCUPC B+D"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/04/23/SCUPC-B-D/&is_video=false&description=SCUPC B+D"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=SCUPC B+D&body=Check out this article: http://yoursite.com/2019/04/23/SCUPC-B-D/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/04/23/SCUPC-B-D/&title=SCUPC B+D"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/04/23/SCUPC-B-D/&title=SCUPC B+D"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/04/23/SCUPC-B-D/&title=SCUPC B+D"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/04/23/SCUPC-B-D/&title=SCUPC B+D"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/04/23/SCUPC-B-D/&name=SCUPC B+D&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://zn0419.cn/2019/04/23/SCUPC-B-D/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://zn0419.cn/2019/04/23/SCUPC-B-D/&text=SCUPC B+D"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://zn0419.cn/2019/04/23/SCUPC-B-D/&title=SCUPC B+D"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://zn0419.cn/2019/04/23/SCUPC-B-D/&is_video=false&description=SCUPC B+D"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=SCUPC B+D&body=Check out this article: http://zn0419.cn/2019/04/23/SCUPC-B-D/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://zn0419.cn/2019/04/23/SCUPC-B-D/&title=SCUPC B+D"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://zn0419.cn/2019/04/23/SCUPC-B-D/&title=SCUPC B+D"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://zn0419.cn/2019/04/23/SCUPC-B-D/&title=SCUPC B+D"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://zn0419.cn/2019/04/23/SCUPC-B-D/&title=SCUPC B+D"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://zn0419.cn/2019/04/23/SCUPC-B-D/&name=SCUPC B+D&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
