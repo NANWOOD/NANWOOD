@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang=en>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="全微分定义：设函数$z=f(x, y)$，点$(x_0, y_0)$的某邻域内有定义，如果函数在点$(x_0, y_0)$的全增量可以表示为 \Delta z = A\Delta x + B\Delta y + o(\rho)其中$\rho = \sqrt{(\Delta x)^2 + (\Delta y)^2}$，$A, B$是不依赖与$\Delta x, \Delta y$的两个常数，则称函数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="多元函数微分">
+<meta property="og:url" content="http://zn0419.cn/2020/02/26/多元函数微分/index.html">
+<meta property="og:site_name" content="NANWOOD&#39;S BLOG">
+<meta property="og:description" content="全微分定义：设函数$z=f(x, y)$，点$(x_0, y_0)$的某邻域内有定义，如果函数在点$(x_0, y_0)$的全增量可以表示为 \Delta z = A\Delta x + B\Delta y + o(\rho)其中$\rho = \sqrt{(\Delta x)^2 + (\Delta y)^2}$，$A, B$是不依赖与$\Delta x, \Delta y$的两个常数，则称函数">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-02-28T18:22:04.946Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="多元函数微分">
+<meta name="twitter:description" content="全微分定义：设函数$z=f(x, y)$，点$(x_0, y_0)$的某邻域内有定义，如果函数在点$(x_0, y_0)$的全增量可以表示为 \Delta z = A\Delta x + B\Delta y + o(\rho)其中$\rho = \sqrt{(\Delta x)^2 + (\Delta y)^2}$，$A, B$是不依赖与$\Delta x, \Delta y$的两个常数，则称函数">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>多元函数微分</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">    
+      <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+         
+          <li><a href="/categories/">categories</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/2020/02/24/向量代数/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://zn0419.cn/2020/02/26/多元函数微分/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://zn0419.cn/2020/02/26/多元函数微分/&text=多元函数微分"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://zn0419.cn/2020/02/26/多元函数微分/&title=多元函数微分"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://zn0419.cn/2020/02/26/多元函数微分/&is_video=false&description=多元函数微分"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=多元函数微分&body=Check out this article: http://zn0419.cn/2020/02/26/多元函数微分/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://zn0419.cn/2020/02/26/多元函数微分/&title=多元函数微分"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://zn0419.cn/2020/02/26/多元函数微分/&title=多元函数微分"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://zn0419.cn/2020/02/26/多元函数微分/&title=多元函数微分"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://zn0419.cn/2020/02/26/多元函数微分/&title=多元函数微分"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://zn0419.cn/2020/02/26/多元函数微分/&name=多元函数微分&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#全微分"><span class="toc-number">1.</span> <span class="toc-text">全微分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#符合函数的求导法则"><span class="toc-number">2.</span> <span class="toc-text">符合函数的求导法则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方向导数和梯度"><span class="toc-number">3.</span> <span class="toc-text">方向导数和梯度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多元函数的极值"><span class="toc-number">4.</span> <span class="toc-text">多元函数的极值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#拉格朗日条件极值"><span class="toc-number">5.</span> <span class="toc-text">拉格朗日条件极值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#拉格朗日对偶性"><span class="toc-number">6.</span> <span class="toc-text">拉格朗日对偶性</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        多元函数微分
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">NANWOOD'S BLOG</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2020-02-26T15:18:08.000Z" itemprop="datePublished">2020-02-26</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/数学/">数学</a>
+    </div>
+
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h3 id="全微分"><a href="#全微分" class="headerlink" title="全微分"></a>全微分</h3><p><strong>定义</strong>：设函数$z=f(x, y)$，点$(x_0, y_0)$的某邻域内有定义，如果函数在点$(x_0, y_0)$的全增量可以表示为</p>
+<script type="math/tex; mode=display">\Delta z = A\Delta x + B\Delta y + o(\rho)</script><p>其中$\rho = \sqrt{(\Delta x)^2 + (\Delta y)^2}$，$A, B$是不依赖与$\Delta x, \Delta y$的两个常数，则称函数$z = f(x, y)$在点$(x_0, y_0)$可微分或可微，并称$A\Delta x + B\Delta y$为函数$z = f(x, y)$在点$(x_0, y_0)$的<strong>全微分</strong>，记作$\mathrm{d}z$，即</p>
+<script type="math/tex; mode=display">\mathrm{d}z = A\Delta x + B\Delta y</script><p><strong>定理1</strong>：若函数$z=f(x, y)$在点$(x_0, y_0)$可微，则函数在点$(x_0, y_0)$处的两个偏导数$\cfrac{\partial z}{\partial x}, \cfrac{\partial z}{\partial y}$存在，且$\mathrm{d}z = \cfrac{\partial z}{\partial x}\mathrm{d}x + \cfrac{\partial z}{\partial y}\mathrm{d}y$<br><strong>定理2</strong>：若函数$z=f(x, y)$的偏导数$f_x(x, y),f_y(x, y)$在点$(x, y)$连续，则函数$z = f(x, y)$在点$(x, y)$可微</p>
+<h3 id="符合函数的求导法则"><a href="#符合函数的求导法则" class="headerlink" title="符合函数的求导法则"></a>符合函数的求导法则</h3><p><strong>链式法则</strong>：</p>
+<script type="math/tex; mode=display">\cfrac{\mathrm{d}y}{\mathrm{d}x} = \cfrac{\mathrm{d}y}{\mathrm{d}u}\cdot \cfrac{\mathrm{d}u}{\mathrm{d}x} = f'(u)u'(x) = f'(\phi(x))\phi '(x)</script><p><strong>求导法则</strong>：设函数$z = f(u, v)$在$(u, v)$可微，$u = u(x, y), v = v(x, y)$在点$(x, y)$处可偏导，则复合函数$z = f[u(x, y), v(x, y)]$在点$(x, y)$的偏导数存在，且</p>
+<script type="math/tex; mode=display">\begin{cases} \cfrac{\partial z}{\partial x} = \cfrac{\partial z}{\partial u} \cdot \cfrac{\partial u}{\partial x} + \cfrac{\partial z}{\partial v} \cdot \cfrac{\partial v}{\partial x}\\ \cfrac{\partial z}{\partial y} = \cfrac{\partial z}{\partial u} \cdot \cfrac{\partial u}{\partial y} + \cfrac{\partial z}{\partial v} \cdot \cfrac{\partial v}{\partial y} \end{cases}</script><h3 id="方向导数和梯度"><a href="#方向导数和梯度" class="headerlink" title="方向导数和梯度"></a>方向导数和梯度</h3><p><strong>方向导数</strong>：设函数$z=f(x, y)$在点$P_0(x_0, y_0)$的某邻域内有定义，$\boldsymbol{l}$为字典$P_0(x_0, y_0)$发出的射线方向，$\boldsymbol{l}^o = (\cos\alpha, \cos\beta)$是与$\boldsymbol{l}$同方向的单位向量，如果</p>
+<script type="math/tex; mode=display">\lim\limits_{\rho \to 0^+} \cfrac{f(x_0 + \rho\cos\alpha, y_0 + \rho\cos\beta) - f(x_0, y_0)}{\rho}</script><p>存在，则称此极限为函数$z=f(x, y)$在点$P_0{x_0, y_0}$沿方向$\boldsymbol{l}$的<strong>方向导数</strong>，记作</p>
+<script type="math/tex; mode=display">\cfrac{\partial f}{\partial \boldsymbol{l}}(x_0, y_0)\,\,\,或\,\,\,f_\boldsymbol{l}(x_0, y_0)</script><p>同理，设$P(x_0 + \Delta x, y_0 + \Delta y)$为方向射线上的动点，上述极限可改写为</p>
+<script type="math/tex; mode=display">\lim\limits_{\Delta x \to 0  \\ \Delta y \to 0}\cfrac{f(x_0 + \Delta x, y_0 + \Delta y) - f(x_0, y_0)}{\sqrt{\Delta x^2 + \Delta y^2}}</script><p><strong>方向导数的计算</strong>：设函数$z=f(x, y)$在点$P(x_0, y_0)$处可微，则函数$z=f(x, y)$在点$P(x_0, y_0)$处沿任意方向$\boldsymbol{l}^o=(\cos\alpha, \cos\beta)$的方向导数都存在，且</p>
+<script type="math/tex; mode=display">\cfrac{\partial f}{\partial \boldsymbol{l}}|_{(x_0, y_0)} = f_x(x_0, y_0)\cos\alpha + f_y(x_0, y_0)\cos\beta</script><p><strong>梯度</strong>：设函数$z=f(x, y)$在点$(x_0, y_0)$处可偏导，称向量$(f_x(x_0, y_0), f_y(x_0, y_0))$为函数$z=f(x, y)$在点$(x_0, y_0)$处的<strong>梯度</strong>，记作</p>
+<script type="math/tex; mode=display">\mathrm{grad} f(x_0, y_0)\,或\,\nabla f(x_0, y_0)</script><p>函数$z=f(x, y)$沿方向$\boldsymbol{l}^o$的方向导数可以改写为</p>
+<script type="math/tex; mode=display">\cfrac{\partial f}{\partial \boldsymbol{l}} = |\mathrm{grad}f| \cdot \cos\theta</script><p>其中$\theta$为梯度$\cfrac{\partial f}{\partial \boldsymbol{l}}$与方向$\boldsymbol{l}^o$之间的夹角</p>
+<h3 id="多元函数的极值"><a href="#多元函数的极值" class="headerlink" title="多元函数的极值"></a>多元函数的极值</h3><p><strong>极值的必要条件</strong>：若函数$z=f(x, y)$在点$P_0(x_0, y_0)$取得极值，并且$z=f(x, y)$在点$(x_0, y_0)$处可偏导，则</p>
+<script type="math/tex; mode=display">f_x(x_0, y_0) = 0,\,\,f_y(x_0, y_0) = 0</script><p><strong>极值的充分条件</strong>：设$z=f(x, y)$在点$P_0(x_0, y_0)$的某邻域内具有一阶及二阶连续偏导数，有$f_x(x_0, y_0)=0, f_y(x_0, y_0)=0$，令</p>
+<script type="math/tex; mode=display">A = f_{xx}(x_0, y_0),\,B = f_{xy}(x_0, y_0),\,C = f_{yy}(x_0, y_0),\,\nabla = B^2 - AC</script><p>那么：<br>（1）若$\nabla &lt; 0, A &lt; 0$，则函数$z = f(x, y)$在点$(x_0, y_0)$取得极大值<br>（2）若$\nabla &lt; 0, A &gt; 0$，则函数$z = f(x, y)$在点$(x_0, y_0)$取得极小值<br>（3）若$\nabla &gt; 0$，则函数$z = f(x, y)$在点$(x_0, y_0)$取不到极值<br>（4）若$\nabla = 0$，则函数$z = f(x, y)$在点$(x_0, y_0)$可能取得极值也可能取不到极值</p>
+<h3 id="拉格朗日条件极值"><a href="#拉格朗日条件极值" class="headerlink" title="拉格朗日条件极值"></a>拉格朗日条件极值</h3><p><strong>无约束条件</strong>：令导函数=0，将可能的极值点回代验证<br><strong>等式约束条件(拉格朗日乘子法)</strong>：条件极值的一般形式为：</p>
+<script type="math/tex; mode=display">\begin{cases}\min f(x, y) \\ \mathrm{s.t.}\quad \varphi(x, y) = 0\end{cases}\quad 或 \quad \begin{cases}\max f(x, y) \\ \mathrm{s.t.}\quad \varphi(x, y) = 0\end{cases}</script><p>做拉格朗日目标函数</p>
+<script type="math/tex; mode=display">L(x, y, \lambda) = f(x, y) + \lambda \varphi (x, y)</script><p>其中$\lambda$称为<strong>拉格朗日乘数</strong><br>求出各个偏导数并令其为0，解出驻点，回代验证，可以推广至多元函数情况<br><strong>不等式约束条件(KKT条件)</strong>：将约束等式推广为约束不等式，其一般形式为：</p>
+<script type="math/tex; mode=display">\begin{cases}\min f(x) \\ \mathrm{s.t.}\quad g_i(x) \le 0, i = 1, 2, ..., m\ \\ \quad\quad\,\,\, h_i(x) = 0, i = 1, 2, ..., p \end{cases}</script><p>作拉格朗日函数转化为无约束问题</p>
+<script type="math/tex; mode=display">L(x, \lambda, \eta) = f(x) + \sum\limits_i^m \lambda_i g_i(x) + \sum\limits_i^p \eta_i h_i(x)</script><p>我们将约束不等式称为<strong>原始可行性(primal feasibility)</strong>，讨论最优解的位置<br>（1）当最优解在不等式可行域的内部时，$g(x)$的约束无效，称为内部解<br>（2）当最优解在不等式可行域的边界时，$g(x)$的约束有效，称为边界解<br>内部解则该问题退化成无约束条件（不考虑$h(x)$），$\lambda = 0$<br>边界解，则$g(x) = 0$，解法则参考等式约束条件，令拉格朗日函数的导数为0，即</p>
+<script type="math/tex; mode=display">\nabla f(x) + \sum\limits_i^m \lambda_i \nabla g_i(x) + \sum\limits_i^p \eta_i \nabla h_i(x) = 0</script><p>对每个约束条件我们都能作出单独的拉格朗日函数，所以对于任意一个不等式约束条件$g(x) \le 0$，可以得到</p>
+<script type="math/tex; mode=display">\nabla f(x) + \lambda g(x) \\ 即 \nabla f(x) = -\lambda \nabla g(x)</script><p>当前情况求$f(x)$的最小值，所以可行域内所有的$f$都更大，所以$f$的梯度应该指向可行域内部，而约束条件$g(x) \le 0$，所以$g$的梯度应该指向可行域外，所以得出$\lambda \ge 0$，由此推出<br><strong>对偶可行性(dual feasibility)</strong>：$\lambda_i \ge 0, i = 1, 2, …, m$（易得，当目标函数为求取$f$的最大值时$\lambda_i \le 0$）<br>由已知最优解在内部时$\lambda = 0$，最优解在边界时$g(x) = 0$，可以推出<br><strong>互补松弛性(complementary slackness)</strong>：$\lambda_i g_i(x) = 0$<br>综上所述，原始可行性、对偶可行性、互补松弛性合起来就是<strong>KKT(Karush-Kuhn-Tucker)条件</strong>，记作</p>
+<script type="math/tex; mode=display">\begin{cases} \nabla_x L = 0 \\ h_i(x) = 0, i = 1, 2, ..., p\\g_i(x) \le 0 \\ \lambda_i \ge 0\\ \lambda_i g_i(x) = 0, i = 1, 2, ..., m\end{cases}</script><p><strong>规范性条件(Regularity conditions)</strong>：满足KKT条件要求约束条件的质量不能太差，常见的比如：<br>LCQ：如果$g(x)$和$h(x)$都是形如$Ax + b$的仿射函数，那么极值一定满足KKT条件。<br>LICQ：起作用的$g(x)$函数（即$g(x) \le 0$相当于等式约束的情况）和$h(x)$函数在极值点处的梯度要线性无关，那么极值一定满足 KKT 条件。<br>Slater条件：如果优化问题是个凸优化问题，且至少存在一个点满足$h(x) = 0$和$g(x) = 0$，极值一定满足KKT条件。并且满足强对偶性质。</p>
+<h3 id="拉格朗日对偶性"><a href="#拉格朗日对偶性" class="headerlink" title="拉格朗日对偶性"></a>拉格朗日对偶性</h3><p><strong>对偶问题</strong>：首先提出问题的一般形式：</p>
+<script type="math/tex; mode=display">\begin{cases}\min f(x) \\ \mathrm{s.t.}\quad g_i(x) \le 0, i = 1, 2, ..., m\ \\ \quad\quad\,\,\, h_i(x) = 0, i = 1, 2, ..., p \end{cases}</script><p>作拉格朗日函数转化为无约束问题</p>
+<script type="math/tex; mode=display">L(x, \lambda, \eta) = f(x) + \sum\limits_i^m \lambda_i g_i(x) + \sum\limits_i^p \eta_i h_i(x)</script><p>为了简化计算，对拉格朗日函数关于$\lambda, \eta$的最大值函数</p>
+<script type="math/tex; mode=display">\theta_P(x) = \max\limits_{\lambda \ge 0,\eta} L(x, \lambda, \eta)</script><p>此处求$f$的最小值所以$\lambda \ge 0$， 原因当$x$满足约束时，$L(x, \lambda, \eta)$关于$\lambda,\eta$的最大值必然为$f(x)$；同理，当求$f$的最大值时$\lambda \le 0$，当$x$满足约束时，$L(x, \lambda, \eta)$关于$\lambda,\eta$的最小值必然为$f(x)$，数学表示如下：</p>
+<script type="math/tex; mode=display">\min\limits_x L(x, \lambda, \eta) = \min\limits_x \theta_P(x) = \min\limits_x\,\max\limits_{\lambda \ge 0,\eta} L(x, \lambda, \eta) \\ \max\limits_x L(x, \lambda, \eta) = \max\limits_x \theta_P(x) = \max\limits_x\,\min\limits_{\lambda \le 0,\eta} L(x, \lambda, \eta)</script><p>接下来只分析求最小值的情况，$\min\limits_x\,\max\limits_{\lambda \ge 0,\eta} L(x, \lambda, \eta)$与原问题完全等价，称为拉格朗日函数的极小极大问题，也被称为<strong>原始问题(Primal Problem)</strong>，其<strong>对偶问题(Dual Problem)</strong> 拉格朗日函数的极大极小问题表示如下：</p>
+<script type="math/tex; mode=display">\theta_D(\lambda,\eta) = \min\limits_x L(x, \lambda, \eta) \\ \max\limits_{\lambda \ge 0,\eta} \theta_D(\lambda,\eta) = \max\limits_{\lambda \ge 0,\eta}\, \min\limits_x L(x, \lambda, \eta)</script><p>将其展开为约束最优化问题</p>
+<script type="math/tex; mode=display">\max\limits_{\lambda,\eta} \theta_D(\lambda,\eta) = \max\limits_{\lambda,\eta}\, \min\limits_x L(x, \lambda, \eta) \\ \mathrm{s.t.}\quad i = 1, 2, ..., m</script><p><strong>弱对偶与强对偶</strong>：关于原始问题和对偶问题，可以得到不等式</p>
+<script type="math/tex; mode=display">\theta_D(\lambda,\eta) = \min\limits_x L(x, \lambda, \eta) \le L(x, \lambda, \eta) \le \max\limits_{\lambda \ge 0,\eta} L(x, \lambda, \eta) = \theta_P(x)</script><p>可以得到<strong>弱对偶性</strong></p>
+<script type="math/tex; mode=display">d^* = \max\limits_{\lambda,\eta} \theta_D(\lambda,\eta) \le \min\limits_x \theta_P(x) = p^*</script><p>而<strong>强对偶性</strong>，即 $d^* = p^*$<br><strong>强对偶的必要条件(KKT条件)</strong>:假设取到极值的点为$x^*,\lambda^*,\eta^*$<br>首先有</p>
+<script type="math/tex; mode=display">\nabla_x L = 0, 即\quad\nabla f(x^*) + \sum\limits_i^m \lambda_i \nabla g_i(x^*) + \sum\limits_i^p \eta_i \nabla h_i(x^*) = 0</script><p>根据不等式</p>
+<script type="math/tex; mode=display">d^* = \min\limits_x L(x, \lambda^*, \eta^*) \le L(x^*, \lambda^*, \eta^*) = f(x^*) + \sum\limits_i^m \lambda_i g_i(x^*) + \sum\limits_i^p \eta_i h_i(x^*) \le p^* = f(x^*)</script><p>因为满足强对偶性，即</p>
+<script type="math/tex; mode=display">d^* = p^*</script><p>有</p>
+<script type="math/tex; mode=display">\sum\limits_i^m \lambda_i g_i(x^*) + \sum\limits_i^p \eta_i h_i(x^*) = 0</script><p>又有约束条件：</p>
+<script type="math/tex; mode=display">h_i(x) = 0, i = 1, 2, ..., p</script><p>得到</p>
+<script type="math/tex; mode=display">\lambda_i g_i(x) = 0, i = 1, 2, ..., m</script><p>由原始问题的极小极大和对偶问题的极大极小可以得到</p>
+<script type="math/tex; mode=display">\lambda_i \ge 0, i = 1, 2, ..., m</script><p>综上所述，推出KKT条件，其必要性证毕<br><strong>强对偶的充分条件(凸函数的KKT条件)</strong>：<br>根据不等式</p>
+<script type="math/tex; mode=display">d^* = \min\limits_x L(x, \lambda^*, \eta^*) \le L(x^*, \lambda^*, \eta^*) = f(x^*) + \sum\limits_i^m \lambda_i g_i(x^*) + \sum\limits_i^p \eta_i h_i(x^*) \le p^* = f(x^*)</script><p>满足KKT条件时</p>
+<script type="math/tex; mode=display">d^* = \min\limits_x L(x, \lambda^*, \eta^*) \le L(x^*, \lambda^*, \eta^*) = f(x^*) + \sum\limits_i^m \lambda_i g_i(x^*) + \sum\limits_i^p \eta_i h_i(x^*) = p^* = f(x^*)</script><p>又因为$L(x, \lambda^*, \eta^*)$为凸函数，当满足$\nabla_x L = 0$时，$L(x^*, \lambda^*, \eta^*)$为最小值，即</p>
+<script type="math/tex; mode=display">d^* = \min\limits_x L(x, \lambda^*, \eta^*) = L(x^*, \lambda^*, \eta^*) = f(x^*) + \sum\limits_i^m \lambda_i g_i(x^*) + \sum\limits_i^p \eta_i h_i(x^*) = p^* = f(x^*) \\ d^* = p^*</script><p>充分性证毕</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+         
+          <li><a href="/categories/">categories</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#全微分"><span class="toc-number">1.</span> <span class="toc-text">全微分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#符合函数的求导法则"><span class="toc-number">2.</span> <span class="toc-text">符合函数的求导法则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方向导数和梯度"><span class="toc-number">3.</span> <span class="toc-text">方向导数和梯度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多元函数的极值"><span class="toc-number">4.</span> <span class="toc-text">多元函数的极值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#拉格朗日条件极值"><span class="toc-number">5.</span> <span class="toc-text">拉格朗日条件极值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#拉格朗日对偶性"><span class="toc-number">6.</span> <span class="toc-text">拉格朗日对偶性</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://zn0419.cn/2020/02/26/多元函数微分/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://zn0419.cn/2020/02/26/多元函数微分/&text=多元函数微分"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://zn0419.cn/2020/02/26/多元函数微分/&title=多元函数微分"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://zn0419.cn/2020/02/26/多元函数微分/&is_video=false&description=多元函数微分"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=多元函数微分&body=Check out this article: http://zn0419.cn/2020/02/26/多元函数微分/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://zn0419.cn/2020/02/26/多元函数微分/&title=多元函数微分"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://zn0419.cn/2020/02/26/多元函数微分/&title=多元函数微分"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://zn0419.cn/2020/02/26/多元函数微分/&title=多元函数微分"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://zn0419.cn/2020/02/26/多元函数微分/&title=多元函数微分"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://zn0419.cn/2020/02/26/多元函数微分/&name=多元函数微分&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    <!-- Copyright &copy; 2020 NANWOOD -->
+    <!-- <a href="http://www.beian.miit.gov.cn">浙ICP备19037221号</a> -->
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+         
+          <li><a href="/categories/">categories</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+        <a href="http://www.beian.miit.gov.cn">浙ICP备19037221号</a>
+        Copyright &copy; 2020 NANWOOD
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+    <!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<!-- clipboard -->
+
+  <script src="/lib/clipboard/clipboard.min.js"></script>
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight .code pre").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      target: function(trigger) {
+        return trigger.nextElementSibling;
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>

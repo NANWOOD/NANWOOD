@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="NANWOOD&#39;S BLOG">
 <meta property="og:description" content="黎曼和与定积分概念：设函数$f(x)$在闭区间$[a, b]$上有定义，在该闭区间上插入一系列分点： a = x_0 &amp;lt; ... &amp;lt; x_{i-1} &amp;lt; x_i &amp;lt; ... &amp;lt; x_n = b将至划分为$n$个小区间，并在每一个小区间$[x_{i-1}, x_i]$上任意取一个点$\xi_i \in [x_{i-1}, x_i]$，作和式（即黎曼和或积分） \sum\limits_{i=1}^nf">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-02-22T15:53:40.140Z">
+<meta property="og:updated_time" content="2020-02-24T13:27:15.762Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="不定积分与定积分">
 <meta name="twitter:description" content="黎曼和与定积分概念：设函数$f(x)$在闭区间$[a, b]$上有定义，在该闭区间上插入一系列分点： a = x_0 &amp;lt; ... &amp;lt; x_{i-1} &amp;lt; x_i &amp;lt; ... &amp;lt; x_n = b将至划分为$n$个小区间，并在每一个小区间$[x_{i-1}, x_i]$上任意取一个点$\xi_i \in [x_{i-1}, x_i]$，作和式（即黎曼和或积分） \sum\limits_{i=1}^nf">
@@ -75,6 +75,8 @@
     <span id="actions">
       <ul>
         
+        <li><a class="icon" href="/2020/02/24/向量代数/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
         
         <li><a class="icon" href="/2020/02/13/导数与微分/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
@@ -103,7 +105,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#黎曼和与定积分"><span class="toc-number">1.</span> <span class="toc-text">黎曼和与定积分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#可积条件"><span class="toc-number">2.</span> <span class="toc-text">可积条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#可积函数与不可积函数"><span class="toc-number">3.</span> <span class="toc-text">可积函数与不可积函数</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#黎曼和与定积分"><span class="toc-number">1.</span> <span class="toc-text">黎曼和与定积分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#可积条件"><span class="toc-number">2.</span> <span class="toc-text">可积条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#可积函数与不可积函数"><span class="toc-number">3.</span> <span class="toc-text">可积函数与不可积函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#不定积分的概念和性质"><span class="toc-number">4.</span> <span class="toc-text">不定积分的概念和性质</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#定积分的性质"><span class="toc-number">5.</span> <span class="toc-text">定积分的性质</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -151,7 +153,7 @@
 <script type="math/tex; mode=display">a = x_0 < ... < x_{i-1} < x_i < ... < x_n = b</script><p>将至划分为$n$个小区间，并在每一个小区间$[x_{i-1}, x_i]$上任意取一个点$\xi_i \in [x_{i-1}, x_i]$，作和式（即<strong>黎曼和</strong>或<strong>积分</strong>）</p>
 <script type="math/tex; mode=display">\sum\limits_{i=1}^nf(x_i)\Delta x_i</script><p>这里$\Delta x_i = x_i - x_{i - 1}$是第$i$个小区间的长度。如果存在一个数$P$，满足：对于任意小的正实数$\varepsilon &gt; 0$，都存在另一个正实数$\varphi &gt; 0$，使得所有划分中，只要他的最大小区间的长度小于$\varphi$，那么无论怎么选取各个小区间上的$\xi_i$的值，都有：</p>
 <script type="math/tex; mode=display">|\sum\limits_{i=1}^nf(\xi_i) \Delta x_i - P|</script><p>那么就称函数$f(x)$在闭区间$[a, b]$上<strong>可积</strong>，$P$称为函数$f(x)$在闭区间$[a, b]$上的定积分值，符号表示：</p>
-<script type="math/tex; mode=display">P = \int_{a}^{b} f(x)\, dx</script><p>其中的$a, b$称为积分上限和积分下限</p>
+<script type="math/tex; mode=display">P = \int_{a}^{b} f(x)\, \mathrm{d}x</script><p>其中的$a, b$称为积分上限和积分下限</p>
 <h3 id="可积条件"><a href="#可积条件" class="headerlink" title="可积条件"></a>可积条件</h3><p><strong>达布和</strong>：设函数$f(x)$在闭区间$[a, b]$上有定义，对于该闭区间的某个划分：</p>
 <script type="math/tex; mode=display">a = x_0 < ... < x_{i-1} < x_i < ... < x_n = b</script><p>设$f(x)$在每个小区间$[x_{i-1}, x_i]$上的上确界为$M_i$，下确界为$m_i$，作和式：</p>
 <script type="math/tex; mode=display">s = \sum\limits_{i=1}^nm_i\Delta x_i</script><p>称为<strong>下积分和</strong>，再作和式</p>
@@ -163,7 +165,14 @@
 <script type="math/tex; mode=display">I^* = \lim\limits_{\lambda \to 0}S, I_* = \lim\limits_{\lambda \to 0}s</script><p>$\lambda$表示划分下的各小区间的最大长度<br><strong>可积条件3</strong>：函数在闭区间上可积的充分必要条件是：上积分与下积分相等，即：</p>
 <script type="math/tex; mode=display">I^* = I_*</script><p>并且在上下积分相等的情况下，这个值就是定积分的值</p>
 <h3 id="可积函数与不可积函数"><a href="#可积函数与不可积函数" class="headerlink" title="可积函数与不可积函数"></a>可积函数与不可积函数</h3><p><strong>定理1</strong>：闭区间上的连续函数总是可积的<br><strong>定理2</strong>：如果函数在闭区间上只有有限多个间断点，那么它是可积的<br><strong>定理3</strong>：函数$f(x)$在闭区间上可积的充分必要条件是：对于任意小的两个正实数$\varepsilon &gt; 0, \sigma &gt; 0$，都存在一个很小的正实数$\varphi&gt;0$，使得任何一个最大小区间长度小于$\varphi$的划分都满足：振幅大于$\varepsilon$的小区间长度总和不超过$\sigma$<br><strong>定理4</strong>：如果函数在闭区间上单调有界，则它是可积的</p>
-
+<h3 id="不定积分的概念和性质"><a href="#不定积分的概念和性质" class="headerlink" title="不定积分的概念和性质"></a>不定积分的概念和性质</h3><p><strong>原函数</strong>：如果在区间$I$上，对已知的函数$f(x)$，若$\forall x \in I$，存在$F(x)$，使得$F’(x) = f(x)$或$\mathrm{d}F(x) = f(x)\,\mathrm{d}x$，则称函数$F(x)$为$f(x)$在区间$I$上的一个原函数，$F(x) + C$是$f(x)$在区间$I$上的全体原函数，$C$为任意常数。<br><strong>不定积分</strong>：函数$f(x)$在区间$I$上的全体原函数称为$f(x)$在区间$I$上的不定积分，记作$\int f(x)\,\mathrm{d}x$，即</p>
+<script type="math/tex; mode=display">\int f(x)\,\mathrm{d}x = F(x) + C</script><p><strong>性质1</strong>：$\int kf(x)\,\mathrm{d}x = k\int f(x)\,\mathrm{d}x\,(k \ne 0)$<br><strong>性质2</strong>：设$f(x),g(x)$的原函数存在，则</p>
+<script type="math/tex; mode=display">\int [f(x) + g(x)]\,\mathrm{d}x = \int f(x)\,\mathrm{d}x + \int g(x)\,\mathrm{d}x</script><p><strong>性质3</strong>：设$f_(x),f_2(x),…,f_n(x)$的原函数存在，且$k_1,k_2,…,k_n$是常数，则</p>
+<script type="math/tex; mode=display">\int [k_1f_1(x) + k_2f_2(x) + ... + k_nf_n(x)]\,\mathrm{d}x = k_1\int f_1(x)\,\mathrm{d}x + k_2\int f_2(x)\,\mathrm{d}x + ... + k_n\int f_n(x)\,\mathrm{d}x</script><h3 id="定积分的性质"><a href="#定积分的性质" class="headerlink" title="定积分的性质"></a>定积分的性质</h3><p><strong>线性性质</strong>：若函数$f_1(x),f_2(x)$在$[a, b]$上可积，$\forall k_1,k_2 \in \mathbb{R}$，则函数在上可积，且</p>
+<script type="math/tex; mode=display">\int_a^b [k_1f_1(x) + k_2f_2(x)]\,\mathrm{d}x = k_1\int_a^b f_1(x)\,\mathrm{d}x + k_2\int_a^b f_2(x)\,\mathrm{d}x</script><p><strong>区间可加性</strong>：设$I$为一个有限闭区间，$a,b,c\in I$，若$f(x)$在$I$上可积，则$f(x)$在$[a, b],[a, c],[c, b]$上均可积，且</p>
+<script type="math/tex; mode=display">\int_a^b f(x)\,\mathrm{d}x = \int_a^c f(x)\,\mathrm{d}x + \int_c^b f(x)\,\mathrm{d}x</script><p><strong>积分中值定理</strong>：若函数$f(x)$在闭区间$[a, b]$上连续，则在区间$[a, b]$上至少存在一点$\xi$，使得</p>
+<script type="math/tex; mode=display">\int_a^bf(x)\,\mathrm{d}x = f(\xi)(b-a),(a \le \xi \le b)</script><p><strong>积分中值定理推广</strong>：若函数$f(x)$在闭区间$[a, b]$上连续，函数$g(x)$在区间$[a, b]$上可积且不变号，则在区间$[a, b]$上至少存在一点$\xi$，使得</p>
+<script type="math/tex; mode=display">\int_a^bf(x)g(x)\,\mathrm{d}x = f(\xi)\int_a^bg(x)\,\mathrm{d}x,</script>
   </div>
 </article>
 
@@ -192,7 +201,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#黎曼和与定积分"><span class="toc-number">1.</span> <span class="toc-text">黎曼和与定积分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#可积条件"><span class="toc-number">2.</span> <span class="toc-text">可积条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#可积函数与不可积函数"><span class="toc-number">3.</span> <span class="toc-text">可积函数与不可积函数</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#黎曼和与定积分"><span class="toc-number">1.</span> <span class="toc-text">黎曼和与定积分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#可积条件"><span class="toc-number">2.</span> <span class="toc-text">可积条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#可积函数与不可积函数"><span class="toc-number">3.</span> <span class="toc-text">可积函数与不可积函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#不定积分的概念和性质"><span class="toc-number">4.</span> <span class="toc-text">不定积分的概念和性质</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#定积分的性质"><span class="toc-number">5.</span> <span class="toc-text">定积分的性质</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
